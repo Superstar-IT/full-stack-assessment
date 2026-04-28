@@ -1,4 +1,3 @@
-/** Split DRF-style JSON body into per-field strings and optional general message. */
 export function parseApiErrorBody(text, statusText) {
   const raw = text?.trim() || ''
   try {
@@ -26,8 +25,6 @@ export function parseApiErrorBody(text, statusText) {
             : raw || statusText || 'Request failed'
       return { fieldErrors, general }
     }
-  } catch {
-    /* not JSON */
-  }
+  } catch {}
   return { fieldErrors: {}, general: raw || statusText || 'Request failed' }
 }

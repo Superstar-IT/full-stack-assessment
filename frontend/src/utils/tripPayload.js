@@ -1,6 +1,5 @@
 import { tripStartToIso } from './datetime'
 
-/** Build POST /api/plan body from react-hook-form values. */
 export function buildTripPayload(values) {
   const payload = {
     current_location: values.current_location.trim(),

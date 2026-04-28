@@ -5,7 +5,6 @@ const STATUS_ROWS = [
   { st: 4, num: '4', label: 'On Duty (not driving)' },
 ]
 
-/** 25 column headers: midnight through 11, noon, 1..11, midnight */
 const HOUR_LABELS = [
   'Midnight',
   '1',
@@ -145,14 +144,12 @@ function GraphGrid({ day }) {
         )
       })}
 
-      {/* Vertical grid per row + duty blocks */}
       {STATUS_ROWS.map((row, ri) => {
         const y0 = TBAR + ri * R_H + GAP
         const y1 = TBAR + (ri + 1) * R_H - GAP
 
         return (
           <g key={row.st}>
-            {/* Row baseline */}
             <rect x={0} y={y0 - 2} width={LEFT - 6} height={y1 - y0 + 4} fill="#fff" stroke={FMCSA.navy} strokeWidth={1} />
             <text x={8} y={y0 + (y1 - y0) * 0.72} fontSize={10} fontFamily="Arial, sans-serif" fill={FMCSA.navy}>
               <tspan fontWeight={700}>{row.num}.</tspan>
@@ -162,7 +159,6 @@ function GraphGrid({ day }) {
 
             <rect x={LEFT} y={y0} width={GRID_W} height={y1 - y0} fill={FMCSA.gridBg} stroke="#000" strokeWidth={1} />
 
-            {/* 15-minute ticks (thin), hour ticks (thick) */}
             {Array.from({ length: 24 * 4 + 1 }, (_, i) => {
               const xm = i * 15
               const x = LEFT + xm * M_PER_UNIT
@@ -205,7 +201,6 @@ function GraphGrid({ day }) {
               )
             })}
 
-            {/* Total hours box */}
             <rect x={LEFT + GRID_W} y={y0} width={RIGHT} height={y1 - y0} fill={FMCSA.headerWash} stroke={FMCSA.navy} strokeWidth={1} />
             <text
               x={LEFT + GRID_W + RIGHT / 2}
