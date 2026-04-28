@@ -1,0 +1,520 @@
+.app {
+  text-align: left;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem 2rem;
+}
+
+.hdr h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin: 0 0 0.35rem;
+  letter-spacing: -0.02em;
+  color: #0a1628;
+}
+
+.sub {
+  color: #546e7a;
+  margin: 0 0 1.25rem;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.grow {
+  min-width: 0;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #e0e4e7;
+  border-radius: 12px;
+  padding: 1rem 1.1rem;
+  box-shadow: 0 4px 20px rgba(0, 30, 60, 0.05);
+}
+
+.card h2 {
+  font-size: 1rem;
+  margin: 0 0 0.75rem;
+  color: #0a1628;
+}
+
+form.card label {
+  display: block;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #607d8b;
+  margin-bottom: 0.65rem;
+}
+
+form.card input {
+  display: block;
+  width: 100%;
+  margin-top: 0.2rem;
+  box-sizing: border-box;
+  padding: 0.5rem 0.55rem;
+  font-size: 0.95rem;
+  border: 1px solid #cfd8dc;
+  border-radius: 6px;
+  background: #fafbfc;
+}
+
+form.card input:focus {
+  outline: 2px solid #1565c0;
+  outline-offset: 0;
+  border-color: #90caf9;
+}
+
+form.card input[type='datetime-local'] {
+  min-height: 2.5rem;
+  color-scheme: light;
+}
+
+.location-autocomplete {
+  position: relative;
+  margin-top: 0.2rem;
+}
+
+.location-autocomplete input {
+  margin-top: 0;
+}
+
+.location-autocomplete__list {
+  position: absolute;
+  z-index: 40;
+  left: 0;
+  right: 0;
+  top: calc(100% + 2px);
+  margin: 0;
+  padding: 0.25rem 0;
+  list-style: none;
+  max-height: 240px;
+  overflow-y: auto;
+  background: #fff;
+  border: 1px solid #90a4ae;
+  border-radius: 6px;
+  box-shadow: 0 8px 24px rgba(0, 20, 40, 0.12);
+}
+
+.location-autocomplete__item {
+  padding: 0.45rem 0.65rem;
+  font-size: 0.8rem;
+  line-height: 1.35;
+  color: #263238;
+  cursor: pointer;
+}
+
+.location-autocomplete__item:hover,
+.location-autocomplete__item--active {
+  background: #e3f2fd;
+}
+
+.location-autocomplete__hint {
+  padding: 0.45rem 0.65rem;
+  font-size: 0.78rem;
+  color: #546e7a;
+  font-style: italic;
+}
+
+button.primary {
+  display: block;
+  width: 100%;
+  margin-top: 0.25rem;
+  padding: 0.65rem 0.8rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(180deg, #1e5fb8, #0d47a1);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button.primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.err {
+  background: #ffebee;
+  color: #b71c1c;
+  padding: 0.5rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  margin: 0.4rem 0 0.6rem;
+  word-break: break-word;
+}
+
+.field-err {
+  margin: 0.3rem 0 0;
+  font-size: 0.8rem;
+  color: #c62828;
+  line-height: 1.35;
+}
+
+form.card label.has-field-err input {
+  border-color: #e57373;
+  background: #fff8f8;
+}
+
+form.card label.has-field-err input:focus {
+  outline: 2px solid #c62828;
+  outline-offset: 0;
+  border-color: #c62828;
+}
+
+.map-wrap,
+.map {
+  min-height: 360px;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #e0e4e7;
+}
+
+.map.ph {
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #90a4ae;
+  background: #eceff1;
+}
+
+.stats {
+  font-size: 0.88rem;
+  color: #37474f;
+  margin: 0 0 0.5rem;
+}
+
+.stats p {
+  margin: 0.1rem 0;
+}
+
+.stat-label {
+  color: #78909c;
+  display: inline-block;
+  min-width: 5.2rem;
+}
+
+.section {
+  margin-top: 1.5rem;
+}
+
+.section h2 {
+  font-size: 1.1rem;
+  color: #0a1628;
+  margin: 0 0 0.5rem;
+}
+
+.ftr {
+  margin-top: 2rem;
+  border-top: 1px solid #e0e4e7;
+  padding-top: 0.75rem;
+}
+
+.muted {
+  color: #78909c;
+}
+
+.small {
+  font-size: 0.85rem;
+}
+
+.rest-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: #37474f;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.eld {
+  position: relative;
+  z-index: 0;
+}
+
+/* FMCSA Drivers Guide palette — navy #002d62, accent blue #0072ce, wash #e1f0f7 */
+.paper-log-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.paper-log {
+  background: #fff;
+  color: #111;
+  border: 2px solid #002d62;
+  padding: 1rem 1rem 1.25rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.35;
+  box-shadow: 0 4px 14px rgba(0, 45, 98, 0.12);
+}
+
+.paper-log__title-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: start;
+  margin-bottom: 0.65rem;
+  padding: 0.5rem 0.65rem;
+  border-bottom: 3px solid #002d62;
+  background: linear-gradient(to bottom, #e1f0f7 0%, #fff 100%);
+}
+
+.paper-log__main-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #002d62;
+}
+
+.paper-log__dup {
+  margin: 0;
+  font-size: 0.65rem;
+  max-width: 14rem;
+  text-align: right;
+  line-height: 1.3;
+  color: #334155;
+}
+
+.paper-log__date-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.paper-log__date-label {
+  font-weight: 700;
+  color: #002d62;
+}
+
+.paper-log__date-box {
+  border: 1px solid #002d62;
+  padding: 0.15rem 0.5rem;
+  min-width: 4rem;
+}
+
+.paper-log__route-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 0.65rem;
+}
+
+.paper-log__field {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.35rem;
+  align-items: baseline;
+}
+
+.paper-log__field span:first-child {
+  font-weight: 700;
+  color: #002d62;
+}
+
+.paper-log__field--full {
+  grid-template-columns: 3.5rem 1fr;
+}
+
+.paper-log__line {
+  border-bottom: 1px solid #002d62;
+  min-height: 1.15rem;
+  padding: 0 0.15rem;
+}
+
+.paper-log__meta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+@media (max-width: 720px) {
+  .paper-log__meta-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.paper-log__twins {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.35rem;
+  margin-bottom: 0.35rem;
+}
+
+.paper-log__box {
+  border: 1px solid #002d62;
+  padding: 0.35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.65rem;
+}
+
+.paper-log__box strong {
+  font-size: 1rem;
+  color: #0079c1;
+}
+
+.paper-log__box--small {
+  min-height: 3.25rem;
+}
+
+.paper-log__box--tall {
+  min-height: 5rem;
+}
+
+.paper-log__placeholder {
+  color: #777;
+}
+
+.paper-log__meta-right .paper-log__field {
+  margin-bottom: 0.35rem;
+}
+
+.paper-log__graph {
+  overflow-x: auto;
+  margin: 0.5rem 0 0.75rem;
+  border: 1px solid #002d62;
+  background: #fff;
+}
+
+.paper-log__svg {
+  display: block;
+  width: 100%;
+  min-width: 720px;
+  height: auto;
+}
+
+.paper-log__remarks-block {
+  border: 2px solid #002d62;
+  margin-bottom: 0.75rem;
+}
+
+.paper-log__remarks-title {
+  margin: 0;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.95rem;
+  border-bottom: 1px solid #002d62;
+  background: #e1f0f7;
+  color: #0072ce;
+  font-weight: 700;
+}
+
+.paper-log__remarks-inner {
+  display: grid;
+  grid-template-columns: 9rem 1fr;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  min-height: 6rem;
+}
+
+@media (max-width: 560px) {
+  .paper-log__remarks-inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+.paper-log__ship-labels {
+  font-size: 0.68rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.paper-log__remarks-text {
+  margin: 0 0 0.35rem;
+  font-size: 0.72rem;
+}
+
+.paper-log__remarks-instruct {
+  margin: 0;
+  font-size: 0.68rem;
+  font-style: italic;
+  color: #333;
+}
+
+.paper-log__recap {
+  border: 2px solid #002d62;
+  padding: 0.5rem;
+  background: #fafcfe;
+}
+
+.paper-log__recap-note {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: baseline;
+  margin-bottom: 0.35rem;
+  font-size: 0.72rem;
+}
+
+.paper-log__recap-note strong {
+  color: #002d62;
+}
+
+.paper-log__recap-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.72rem;
+  margin-bottom: 0.35rem;
+}
+
+.paper-log__recap-table th,
+.paper-log__recap-table td {
+  border: 1px solid #002d62;
+  padding: 0.25rem 0.35rem;
+  text-align: center;
+}
+
+.paper-log__recap-table th {
+  background: #e1f0f7;
+  color: #002d62;
+  font-weight: 700;
+}
+
+.paper-log__recap-lead {
+  text-align: left;
+  font-weight: 600;
+}
+
+.paper-log__recap-legend {
+  margin: 0.35rem 0 0;
+  padding-left: 1.1rem;
+  font-size: 0.65rem;
+  color: #333;
+  line-height: 1.4;
+}
+
+.paper-log__recap-corner {
+  min-width: 4rem;
+}
+
+/* Leaflet above other UI */
+.map-wrap {
+  z-index: 0;
+  position: relative;
+}
+
+.eld .leaflet-container,
+.map-wrap .leaflet-container {
+  z-index: 1;
+}
